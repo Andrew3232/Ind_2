@@ -103,7 +103,16 @@
                 <th class="text-center" onclick="sortTable(5)">Age <i class="fa fa-fw fa-sort"></i></th>
             </tr>
             <tbody id="tableSt">
-
+            	<tr><td><input type="checkbox"></td><td>Oleinych</td><td>Andriy</td><td>Anatoliyovich</td><td>Vinnytsia</td><td>20</td></tr>
+            	<tr><td><input type="checkbox"></td><td>Vinci</td><td>Leonardo</td><td>da</td><td>Florencia</td><td>33</td></tr>
+            	<tr><td><input type="checkbox"></td><td>Bismark</td><td>Otto</td><td>fon</td><td>Berlin</td><td>56</td></tr>
+            	<tr><td><input type="checkbox"></td><td>Napoleon</td><td>Bonapard</td><td>de</td><td>Paris</td><td>50</td></tr>
+            	<tr><td><input type="checkbox"></td><td>Vovk</td><td>Ivan</td><td>Petrovich</td><td>Kiev</td><td>32</td></tr>
+            	<tr><td><input type="checkbox"></td><td>Korj</td><td>Anya</td><td>Olegovna</td><td>Moscow</td><td>26</td></tr>
+            	<tr><td><input type="checkbox"></td><td>Roht</td><td>Oksana</td><td>Igorivna</td><td>Lviv</td><td>20</td></tr>
+            	<tr><td><input type="checkbox"></td><td>Mort</td><td>Pablo</td><td>Alexandrovich</td><td>Donetsk</td><td>77</td></tr>
+            	<tr><td><input type="checkbox"></td><td>Snow</td><td>John</td><td>Mukolayovich</td><td>Oslo</td><td>65</td></tr>
+            	<tr><td><input type="checkbox"></td><td>York</td><td>Leopold</td><td>Sergeevich</td><td>Tokio</td><td>44</td></tr>
             </tbody>
         </table>
 
@@ -116,26 +125,26 @@
         </ul>
     </div>
     <script src="components/jquery.js"></script>
+    <script src="components/bootstrap.min.js"></script>
+
     <script>
         $(document).ready(function() {
             $.getJSON("components/data.json", function(data) {
-                var stud_data = '';
+                var person_data = '';
                 $.each(data, function(key, value) {
-                    stud_data += '<tr>';
-                    stud_data += '<td><input type="checkbox" onclick="GetSelected()"></td>';
-                    stud_data += '<td>' + value.name + '</td>';
-                    stud_data += '<td>' + value.secName + '</td>';
-                    stud_data += '<td>' + value.lastName + '</td>';
-                    stud_data += '<td>' + value.city + '</td>';
-                    stud_data += '<td>' + value.age + '</td>';
-                    stud_data += '</tr>';
+                    person_data += '<tr>';
+                    person_data += '<td><input type="checkbox" onclick="GetSelected()"></td>';
+                    person_data += '<td>' + value.name + '</td>';
+                    person_data += '<td>' + value.secName + '</td>';
+                    person_data += '<td>' + value.lastName + '</td>';
+                    person_data += '<td>' + value.city + '</td>';
+                    person_data += '<td>' + value.age + '</td>';
+                    person_data += '</tr>';
                 });
-                $('#tableSt').append(stud_data);
+                $('#tableSt').append(person_data);
             });
         });
     </script>
-    <script src="components/bootstrap.min.js"></script>
-
     <script>
         function sortTable(n) {
             var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
